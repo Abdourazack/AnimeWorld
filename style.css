@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #3f51b5;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+section#anime-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+#anime-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.anime-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex; /* Flexbox pour structurer les éléments */
+  flex-direction: column; /* Aligne les éléments verticalement */
+  justify-content: space-between; /* Espace entre les éléments */
+}
+
+.anime-card img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.anime-card h3 {
+  margin: 10px 0; /* Espacement autour du titre */
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.anime-card:hover {
+  transform: scale(1.05);
+}
+
+/* Boutons toujours en bas */
+.add-to-db {
+  background-color: #3f51b5; /* Couleur de fond bleu */
+  color: white; /* Couleur du texte */
+  font-size: 16px; /* Taille du texte */
+  padding: 10px 20px; /* Espacement interne */
+  border: none; /* Pas de bordure */
+  border-radius: 25px; /* Bords arrondis */
+  cursor: pointer; /* Curseur en forme de main */
+  transition: all 0.3s ease; /* Transition douce pour les effets */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre légère sous le bouton */
+  text-transform: uppercase; /* Met le texte en majuscule */
+  font-weight: bold; /* Texte en gras */
+  margin: 10px; /* Espacement intérieur pour éviter que le bouton touche les bords */
+  align-self: center; /* Centre horizontalement le bouton */
+}
+
+/* Effet au survol du bouton */
+.add-to-db:hover {
+  background-color: #536dfe; /* Changement de couleur de fond au survol */
+  transform: translateY(-3px); /* Légère élévation lors du survol */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Ombre plus marquée */
+}
+
+/* Effet de focus sur le bouton (quand il est sélectionné) */
+button.add-to-db:focus {
+  outline: none; /* Enlève le contour par défaut */
+  box-shadow: 0 0 0 4px rgba(63, 81, 181, 0.5); /* Légère bordure bleue */
+}
+
+/* Effet de clic (au moment de l'action) */
+button.add-to-db:active {
+  transform: scale(0.98); /* Le bouton "se contracte" lors du clic */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Ombre moins prononcée */
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #3f51b5;
+  color: white;
+}
+
+/* Responsivité : adaption à différents écrans */
+@media screen and (max-width: 768px) {
+  section#anime-list {
+    justify-content: center;
+  }
+
+  .anime-card {
+    width: 100%; /* Les cartes prennent toute la largeur de l'écran sur mobile */
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    font-size: 18px; /* Réduire la taille du texte sur mobile */
+    padding: 15px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
