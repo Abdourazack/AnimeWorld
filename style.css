@@ -125,3 +125,100 @@ footer {
     font-size: 12px;
   }
 }
+
+/* Style général pour la page d'accueil */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.homepage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("./images/4afc9b072b54a7e23b750bccf5d941cc.gif") no-repeat
+    center center/cover; /* Remplacez par une image de fond de mangas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.content {
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Style du bouton */
+.start-btn {
+  background-color: #ff5722; /* Couleur orange */
+  color: white;
+  font-size: 18px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulse 1.5s infinite;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.start-btn:hover {
+  background-color: #e64a19;
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 87, 34, 0.7);
+  }
+}
+
+/* S'assurer que l'image s'adapte aux petits écrans */
+@media screen and (max-width: 768px) {
+  .homepage {
+    background-size: cover; /* Toujours couvrir toute la surface */
+    background-position: center; /* S'assurer que le centre de l'image reste visible */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .homepage {
+    background-size: cover; /* Couvre encore la surface sur les téléphones */
+    background-position: center; /* Garde le centre comme point d'intérêt */
+  }
+
+  .content h1 {
+    font-size: 1.5rem; /* Réduit davantage le titre */
+  }
+}
